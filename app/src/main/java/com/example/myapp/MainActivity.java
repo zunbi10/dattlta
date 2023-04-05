@@ -14,7 +14,7 @@ Button btnAI,btnBD;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnAI= findViewById(R.id.button2);
+        btnAI= findViewById(R.id.buttonAI);
         btnAI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
