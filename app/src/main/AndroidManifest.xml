@@ -12,14 +12,14 @@
         android:theme="@style/Theme.MyApp"
         tools:targetApi="31">
         <activity
-            android:name=".QuestionAI2"
+            android:name=".QuestionBigData"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".QuestionAI1"
+            android:name=".QuestionAI"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

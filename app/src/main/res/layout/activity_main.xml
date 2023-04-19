@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/hinh_nen_red_color"
+    android:background="@drawable/white_blue_background"
     tools:context=".MainActivity">
 
 
@@ -31,42 +31,48 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="80dp"
+        android:layout_width="262dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="23dp"
         android:text="Chọn chuyên ngành của bạn"
-        android:textColor="#3CD131"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="212dp"
         android:layout_height="163dp"
+        android:layout_marginStart="11dp"
         android:layout_marginEnd="11dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431"
+        app:layout_constraintVertical_bias="0.271"
         app:srcCompat="@drawable/zh_logo" />
 
     <EditText
         android:id="@+id/textName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="432dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="408dp"
+        android:layout_marginEnd="5dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Nhập tên của bạn"
         android:textAlignment="center"
-        android:textColor="#FFEB3B"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
