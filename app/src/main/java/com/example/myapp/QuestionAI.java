@@ -51,7 +51,7 @@ public class QuestionAI extends AppCompatActivity implements View.OnClickListene
         submitBtn.setOnClickListener(this);
     }
     public void loadQuestions(int index){
-        AIQuestion question = questions.get(index);
+        Question question = questions.get(index);
         rightAnswer = question.getAnswer();
         questionTextView.setText(question.getQuestion());
         if(question.getOption2()==null||question.getOption3()==null)
