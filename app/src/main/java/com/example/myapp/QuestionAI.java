@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class QuestionAI extends AppCompatActivity implements View.OnClickListener {
@@ -17,6 +16,7 @@ public class QuestionAI extends AppCompatActivity implements View.OnClickListene
     TextView questionTextView;
     Button btn_a1, btn_a2, btn_a3, btn_a4;
     Button submitBtn;
+    int maxSize=5;
     String selectedAnswer, rightAnswer;
     int questionIndex = 0;
     int total=1;
@@ -28,12 +28,11 @@ public class QuestionAI extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_question_ai);
 
         init();
+        shuffleQuestion();
         loadQuestions(questionIndex);
-
-        TextView textUserName = findViewById(R.id.Name_total_question);
-        Intent intent = getIntent();
-        textUserName.setText(String.format("chào %s  câu hỏi hiện tại là %d/%d",intent.getStringExtra(NAME) ,total, questions.size()));
-
+//        TextView textUserName = findViewById(R.id.Name_total_question);
+//        Intent intent = getIntent();
+//        textUserName.setText(String.format("chào %s câu hỏi hiện tại là %d/%d",intent.getStringExtra(NAME) ,total, questions.size()));
     }
     public void init(){
         totalQuestionsTextView = findViewById(R.id.Name_total_question);
@@ -51,6 +50,7 @@ public class QuestionAI extends AppCompatActivity implements View.OnClickListene
         submitBtn.setOnClickListener(this);
     }
     public void loadQuestions(int index){
+        total_question();
         Question question = questions.get(index);
         rightAnswer = question.getAnswer();
         questionTextView.setText(question.getQuestion());
@@ -85,11 +85,11 @@ public class QuestionAI extends AppCompatActivity implements View.OnClickListene
                 score++;
             }
             questionIndex++;
-            if (questionIndex >= questions.size()){
+            total++;
+            if (questionIndex >= maxSize){
                 finishQuiz();
             }
             else {
-                total++;
                 loadQuestions(questionIndex);
             }
         }
@@ -101,7 +101,7 @@ public class QuestionAI extends AppCompatActivity implements View.OnClickListene
     public void finishQuiz(){
         new AlertDialog.Builder(this)
                 .setTitle("FinishQuiz")
-                .setMessage(String.format("Score: %d (Correct Answers: %d/%d)", score,score,questions.size()))
+                .setMessage(String.format("Score: %d (Correct Answers: %d/%d)", score,score,maxSize))
                 .setPositiveButton("Restar", ((dialogInterface, i) -> restartQuiz()))
                 .setNegativeButton("Review", ((dialogInterface, i) -> reviewQuiz()))
                 .show();
@@ -110,11 +110,23 @@ public class QuestionAI extends AppCompatActivity implements View.OnClickListene
     public void restartQuiz(){
         score = 0;
         questionIndex = 0;
+        total=1;
+        shuffleQuestion();
         loadQuestions(questionIndex);
     }
 
     public void reviewQuiz(){
 
+    }
+    public void total_question()
+    {
+        TextView textUserName = findViewById(R.id.Name_total_question);
+        Intent intent = getIntent();
+        textUserName.setText(String.format("chào %s  câu hỏi hiện tại là %d/%d",intent.getStringExtra(NAME) ,total, maxSize));
+    }
+    public void shuffleQuestion()
+    {
+        questions.shuffle();
     }
 
 }

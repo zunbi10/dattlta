@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
@@ -55,7 +56,7 @@ public class AIQuestionList extends ArrayList<Question> {
         q6.setOption1("the");
         q6.setOption2("double");
         q6.setOption3("funcion");
-        this.add(q3);
+        this.add(q6);
 
         Question q7 = new Question();
         q7.setQuestion("có bao nhiêu cách sắp xếp thứ t khác nhau khi 4 người xếp thành một hàng dọc");
@@ -66,20 +67,16 @@ public class AIQuestionList extends ArrayList<Question> {
         this.add(q7);
 
         Question q8 = new Question();
-        q8.setQuestion("có bao nhiêu cách chọn ra 3 người từ một nhóm 5 người nếu giả sử không có thứ tự nào khi trọn");
-        q8.setAnswer("6");
-        q8.setOption1("4");
-        q8.setOption2("12");
-        q8.setOption3("24");
+        q8.setQuestion("có 6 cách chọn ra 3 người từ một nhóm 5 người nếu giả sử không có thứ tự nào khi trọn");
+        q8.setAnswer("Đúng");
+        q8.setOption1("Sai");
         this.add(q8);
 
         Question q9 = new Question();
         q9.setQuestion("có 2 bóng đỏ và 8 quả bóng trắng trọng một túi.Lần lượt lấy ra hai quả bóng cho tới khi không còn bóng trong túi\n"+
-                "hỏi xác xuất để cả quả bóng được lấy ra đều là màu đỏ");
-        q9.setAnswer("1/35");
-        q9.setOption1("1/25");
-        q9.setOption2("1/5");
-        q9.setOption3("1/100");
+                "hỏi xác xuất để cả quả bóng được lấy ra đều là màu đỏ bằng 1/35");
+        q9.setAnswer("Đúng");
+        q9.setOption1("Sai");
         this.add(q9);
 
         Question q10 = new Question();
@@ -90,5 +87,13 @@ public class AIQuestionList extends ArrayList<Question> {
         q10.setOption3("0");
         this.add(q10);
     }
+    public void shuffle()
+    {
+        Collections.shuffle(this);
+        for(Question q:this){
+            System.out.println(q);
+        }
+    }
+
 }
 
