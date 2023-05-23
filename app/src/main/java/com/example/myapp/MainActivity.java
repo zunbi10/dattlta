@@ -26,7 +26,7 @@ boolean isFirst = true;
             @Override
             public void onClick(View view) {
                 String name = textName.getText().toString().trim();
-                Intent intent = new Intent(MainActivity.this, QuestionAI.class);
+                Intent intent = new Intent(MainActivity.this, CourseIntroductionActivity.class);
                 intent.putExtra(QuestionAI.NAME, name);
                 startActivity(intent);
             }
@@ -52,7 +52,7 @@ boolean isFirst = true;
         });
     }
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, QuestionAI.class);
+                Intent intent = new Intent(MainActivity.this, CourseIntroductionActivity.class);
                 startActivity(intent);
             };
 }
