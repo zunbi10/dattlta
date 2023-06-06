@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String name = textName.getText().toString().trim();
-                String Subject = "AI";
+                String subject = "AI";
                 Intent intent = new Intent(MainActivity.this, CourseIntroductionActivity.class);
                 intent.putExtra(CourseIntroductionActivity.NAME, name);
-                intent.putExtra(CourseIntroductionActivity.Subject, Subject);
+                intent.putExtra(CourseIntroductionActivity.Subject, subject);
                 startActivity(intent);
             }
         });
@@ -40,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String name = textName.getText().toString().trim();
-                String Subject = "BD";
+                String subject = "BD";
                 Intent intent = new Intent(MainActivity.this, CourseIntroductionActivity.class);
                 intent.putExtra(CourseIntroductionActivity.NAME, name);
-                intent.putExtra(CourseIntroductionActivity.Subject, Subject);
+                intent.putExtra(CourseIntroductionActivity.Subject, subject);
                 startActivity(intent);
             }
         });
