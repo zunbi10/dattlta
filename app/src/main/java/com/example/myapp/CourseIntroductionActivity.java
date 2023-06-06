@@ -30,7 +30,7 @@ public class CourseIntroductionActivity extends AppCompatActivity {
         }
         else if(intent1.getStringExtra(Subject).equals("BD"))
         {
-            Text_intro.setText(String.format("%s     %s",intent1.getStringExtra(NAME),intent1.getStringExtra(Subject)));
+            Text_intro.setText(String.format(""));
         }
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
