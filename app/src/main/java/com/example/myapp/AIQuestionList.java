@@ -95,5 +95,12 @@ public class AIQuestionList extends ArrayList<Question> {
         }
     }
 
+    public void shuffleAnswer()
+    {
+        Collections.shuffle(this);
+        for(Question q:this){
+            System.out.println(q);
+        }
+    }
 }
 

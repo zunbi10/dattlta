@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class QuestionAI extends AppCompatActivity implements View.OnClickListener {
+public class QuestionActivity extends AppCompatActivity implements View.OnClickListener {
     public static String NAME = "";
     TextView totalQuestionsTextView;
     TextView questionTextView;
@@ -26,13 +26,9 @@ public class QuestionAI extends AppCompatActivity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_ai);
-
         init();
         shuffleQuestion();
         loadQuestions(questionIndex);
-//        TextView textUserName = findViewById(R.id.Name_total_question);
-//        Intent intent = getIntent();
-//        textUserName.setText(String.format("chào %s câu hỏi hiện tại là %d/%d",intent.getStringExtra(NAME) ,total, questions.size()));
     }
     public void init(){
         totalQuestionsTextView = findViewById(R.id.Name_total_question);

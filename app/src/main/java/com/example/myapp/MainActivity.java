@@ -2,6 +2,7 @@ package com.example.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,9 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-Button btnAI,btnBD;
-boolean isFirst = true;
+    Button btnAI,btnBD;
+    boolean isFirst = true;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,14 +22,28 @@ boolean isFirst = true;
 
         EditText textName = findViewById(R.id.textName);
         btnAI = findViewById(R.id.buttonAI);
-
+        btnBD = findViewById(R.id.buttonBD);
 
         btnAI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String name = textName.getText().toString().trim();
+                String Subject = "AI";
                 Intent intent = new Intent(MainActivity.this, CourseIntroductionActivity.class);
-                intent.putExtra(QuestionAI.NAME, name);
+                intent.putExtra(CourseIntroductionActivity.NAME, name);
+                intent.putExtra(CourseIntroductionActivity.Subject, Subject);
+                startActivity(intent);
+            }
+        });
+
+        btnBD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = textName.getText().toString().trim();
+                String Subject = "BD";
+                Intent intent = new Intent(MainActivity.this, CourseIntroductionActivity.class);
+                intent.putExtra(CourseIntroductionActivity.NAME, name);
+                intent.putExtra(CourseIntroductionActivity.Subject, Subject);
                 startActivity(intent);
             }
         });
@@ -51,8 +67,5 @@ boolean isFirst = true;
             }
         });
     }
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CourseIntroductionActivity.class);
-                startActivity(intent);
-            };
+
 }
